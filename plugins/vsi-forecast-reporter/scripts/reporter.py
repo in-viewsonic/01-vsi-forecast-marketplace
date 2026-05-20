@@ -2,6 +2,8 @@
 """
 VSI Forecast Reporter — 核心引擎
 
+Git ruleset test
+
 流程:
   Step 0: 解析所有 forecast 檔，攤平成 long table
   Step 1: 轉成 wide table (M / M+1 / M+2 三個月一列)
