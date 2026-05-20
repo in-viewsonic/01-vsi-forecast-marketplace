@@ -59,6 +59,15 @@ def detect_product_line(filepath: Path, configs: list[dict]) -> dict | None:
             sig = cfg.get("content_signature")
             if not sig:
                 continue
+
+            # 方式 1: 用「特定 sheet name 存在」當辨識特徵
+            if "sheet_name_must_contain" in sig:
+                target = sig["sheet_name_must_contain"]
+                if any(target.lower() in s.lower() for s in wb.sheetnames):
+                    return cfg
+                continue
+
+            # 方式 2: 用 header row 關鍵字辨識
             country_sheets = cfg["country_sheets"]
             sample = next((s for s in country_sheets if s in wb.sheetnames), None)
             if not sample:
@@ -68,7 +77,7 @@ def detect_product_line(filepath: Path, configs: list[dict]) -> dict | None:
                 str(ws.cell(row=sig["row"], column=c).value or "")
                 for c in range(1, 16)
             ).upper()
-            if all(kw.upper() in row_text for kw in sig["must_contain"]):
+            if all(kw.upper() in row_text for kw in sig.get("must_contain", [])):
                 return cfg
     except Exception as e:
         print(f"  (內容辨識失敗 {filepath.name}: {e})", file=sys.stderr)
