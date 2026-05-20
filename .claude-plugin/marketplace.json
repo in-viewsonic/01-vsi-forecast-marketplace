@@ -1,0 +1,17 @@
+{
+  "name": "vsi-tools",
+  "owner": {
+    "name": "VSI Team"
+  },
+  "description": "VSI 內部 Claude Code Plugin 集合：forecast 整理、Allocate Table 自動化等工具",
+  "plugins": [
+    {
+      "name": "vsi-forecast-reporter",
+      "source": "./plugins/vsi-forecast-reporter",
+      "description": "整理多產品線廠商 forecast 檔，產出 Master 大表、Missing 報告、與填好的 Allocate Table",
+      "version": "0.1.0",
+      "category": "data-processing",
+      "tags": ["forecast", "allocation", "excel", "sales"]
+    }
+  ]
+}

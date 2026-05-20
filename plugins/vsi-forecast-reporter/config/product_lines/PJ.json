@@ -1,0 +1,36 @@
+{
+  "product_line": "PJ",
+  "_comment": "PJ 產品線 forecast 檔規格 (Projector / P&A)",
+
+  "filename_patterns": [
+    "VSI[_-]?PJ",
+    "PJ.*WFP",
+    "PJ.*Fcst",
+    "Projector.*Forecast"
+  ],
+
+  "content_signature": {
+    "row": 15,
+    "must_contain": ["Segment", "Model", "STD"]
+  },
+
+  "country_sheets": ["KR", "JP", "ID", "IN", "PH", "VN", "BD+", "TH", "MY", "SG", "AZ"],
+
+  "country_layout": {
+    "header_row": 15,
+    "data_start_row": 16,
+    "cols_per_month": 13,
+    "gap_cols_between_blocks": 1,
+    "first_block_start_col": 4
+  },
+
+  "dimension_columns": {
+    "model": 3
+  },
+
+  "metric_offsets": {
+    "qty": 1,
+    "gross_asp_usd": 3,
+    "gross_asp_local": 4
+  }
+}

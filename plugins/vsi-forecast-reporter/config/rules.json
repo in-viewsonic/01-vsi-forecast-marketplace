@@ -1,0 +1,35 @@
+{
+  "_comment": "通用規則設定 (不分產品線)",
+
+  "output_months": 3,
+  "_output_months_note": "輸出 M / M+1 / M+2 三個月",
+
+  "local_currency_countries": ["JP"],
+  "_local_currency_note": "這些國家用 gross_asp_local 當作 Gross ASP；其他國家用 gross_asp_usd。未來新增國家直接加進這個 list。",
+
+  "skip_countries": ["TW"],
+  "_skip_note": "TW 不送 Allocate 系統，攤平大表時也排除",
+
+  "allocate_table": {
+    "filename_pattern": "(\\d{4})[_-](\\d{1,2}).*[Aa]llocate",
+    "_pattern_note": "從檔名抓 YEAR_MONTH，例如 '2026_2_xxx_AllocateTable.xlsx' 抓到 (2026, 2)",
+    "sheet_name": "Sheet1",
+    "header_row": 1,
+    "data_start_row": 2,
+    "key_columns": {
+      "country": "Country",
+      "model": "Model"
+    }
+  },
+
+  "missing_rules": {
+    "_comment": "Missing Model = 有 Qty 但不在 Allocate；Missing ASP = 有 Qty 但 Gross ASP 為 0/null",
+    "treat_qty_zero_as_no_qty": true
+  },
+
+  "output_filenames": {
+    "master": "master_forecast.xlsx",
+    "missing_models": "missing_models_for_BLM.xlsx",
+    "missing_asp": "missing_asp_for_CSC.xlsx"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "vsi-forecast-reporter",
+  "description": "整理 VSI 廠商 forecast 檔（EDU/PJ 等多產品線）為標準大表（M / M+1 / M+2 三月份寬表），並比對 Allocate Table 找出 (1) 缺漏機種 (給 BLM 審查) 與 (2) 有 Qty 無 ASP 機種 (給 CSC 詢價)。原 Allocate Table 不被修改。",
+  "version": "0.1.0",
+  "author": {
+    "name": "VSI Team"
+  },
+  "keywords": ["forecast", "vsi", "sales", "allocation", "excel"],
+  "license": "MIT"
+}

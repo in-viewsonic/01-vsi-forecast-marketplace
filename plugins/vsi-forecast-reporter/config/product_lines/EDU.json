@@ -1,0 +1,37 @@
+{
+  "product_line": "EDU",
+  "_comment": "EDU 產品線 forecast 檔規格 (IFP/PGA/Cloud/SAAS)",
+
+  "filename_patterns": [
+    "VSI[_-]?EDU",
+    "EDU.*Fcst",
+    "EDU.*Forecast"
+  ],
+
+  "content_signature": {
+    "_comment": "找不到檔名 pattern 時，用此特徵辨識：header_row 含這些關鍵字",
+    "row": 12,
+    "must_contain": ["Type", "Buffer", "Model"]
+  },
+
+  "country_sheets": ["AZ", "KR", "JP", "ID", "IN", "VN", "PH", "BD+", "TH", "MY", "SG"],
+
+  "country_layout": {
+    "header_row": 12,
+    "data_start_row": 13,
+    "cols_per_month": 13,
+    "gap_cols_between_blocks": 0,
+    "first_block_start_col": 4
+  },
+
+  "dimension_columns": {
+    "model": 3
+  },
+
+  "metric_offsets": {
+    "_comment": "每月區塊內欄位偏移 (0 = 區塊起點 = STD/COGS)",
+    "qty": 1,
+    "gross_asp_usd": 3,
+    "gross_asp_local": 4
+  }
+}
