@@ -1,0 +1,38 @@
+{
+  "product_line": "LCD",
+  "_comment": "LCD 產品線 forecast 檔規格。版面跟 EDU/PJ 不同：第一月區塊從 F=6 開始、每月 18 欄、Model 在 E=5",
+
+  "filename_patterns": [
+    "LCD[_-]?\\d?M",
+    "LCD.*Allocated",
+    "LCD.*Fcst",
+    "LCD.*Forecast"
+  ],
+
+  "content_signature": {
+    "row": 12,
+    "must_contain": ["Pallet", "Size", "Model", "Disti"]
+  },
+
+  "country_sheets": ["AZ", "KR", "JP", "ID", "IN", "VN", "PH", "BD+", "MY", "TH", "SG"],
+  "_country_note": "TW 不送 Allocate，MA 是區域辦公室也排除",
+
+  "country_layout": {
+    "header_row": 12,
+    "data_start_row": 13,
+    "cols_per_month": 18,
+    "gap_cols_between_blocks": 0,
+    "first_block_start_col": 6
+  },
+
+  "dimension_columns": {
+    "model": 5
+  },
+
+  "metric_offsets": {
+    "_comment": "從 F=0 (STD) 算起",
+    "qty": 2,
+    "gross_asp_usd": 4,
+    "gross_asp_local": 5
+  }
+}

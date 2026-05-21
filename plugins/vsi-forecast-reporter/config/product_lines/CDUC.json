@@ -1,0 +1,36 @@
+{
+  "product_line": "CDUC",
+  "_comment": "CDUC 產品線 forecast 檔規格。版面跟 EDU 幾乎一樣 (stride=13, gap=0)",
+
+  "filename_patterns": [
+    "VSI[_-]?CDUC",
+    "CDUC[_-]?\\d?M",
+    "CDUC.*master",
+    "CDUC.*Fcst"
+  ],
+
+  "content_signature": {
+    "_comment": "用 'CDUC' 或 'CD' 字眼當特徵，避免跟 EDU 混淆",
+    "sheet_name_must_contain": "CD consolidate"
+  },
+
+  "country_sheets": ["AZ", "KR", "JP", "ID", "IN", "VN", "PH", "BD+", "MY", "TH", "SG"],
+
+  "country_layout": {
+    "header_row": 12,
+    "data_start_row": 13,
+    "cols_per_month": 13,
+    "gap_cols_between_blocks": 0,
+    "first_block_start_col": 4
+  },
+
+  "dimension_columns": {
+    "model": 3
+  },
+
+  "metric_offsets": {
+    "qty": 1,
+    "gross_asp_usd": 3,
+    "gross_asp_local": 4
+  }
+}
