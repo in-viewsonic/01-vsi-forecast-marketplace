@@ -22,7 +22,7 @@ VSI 內部用的 Claude Code Plugin 集合。
 
 例如：
 - 本地：`/plugin marketplace add ./vsi-forecast-marketplace`
-- GitHub：`/plugin marketplace add github.com/your-team/vsi-forecast-marketplace`
+GitHub：`/plugin marketplace add github.com/in-viewsonic/01-vsi-forecast-marketplace`
 
 ### Step 2: 安裝想用的 Plugin
 
